@@ -30,42 +30,46 @@ function PoetryApp() {
   }, [selectedAuthor]);
 
   return (
-    <div
-      style={{
-        background:
-          "linear-gradient(135deg, #FAD0C4, #B6D8C9, #EBBAB9, #C9D8B6)",
-      }}
-      className="min-h-screen flex flex-col justify-start items-center"
-    >
-      <div className="bg-white p-8 w-2/3 rounded-lg shadow-md relative z-10 mt-8">
-        <label className="font-bold" htmlFor="authorSelect">
-          Select an author:
-        </label>
+    <div>
+      <div
+        style={{
+          background:
+            "linear-gradient(135deg, #FAD0C4, #B6D8C9, #EBBAB9, #C9D8B6)",
+        }}
+        className="min-h-screen flex flex-col justify-start items-center"
+      >
+        <div className="bg-white p-8 w-2/3 rounded-lg shadow-md relative z-10 mt-8">
+          <label className="font-bold" htmlFor="authorSelect">
+            Select an author:
+          </label>
 
-        <select
-          id="authorSelect"
-          onChange={(e) => setSelectedAuthor(e.target.value)}
-          value={selectedAuthor}
-          style={{ width: "250px" }}
-          className="mt-2"
-        >
-          <option value="">Select an author</option>
-          {authors.map((author) => (
-            <option key={author} value={author}>
-              {author}
-            </option>
-          ))}
-        </select>
-
-        <div className="mt-8">
-          <h3 className="mb-4 font-bold">Poems by {selectedAuthor}</h3>
-          <ul>
-            {poems.map((poem) => (
-              <li key={poem.title}>
-                <Link to={`/poem/${poem.title}`}>{poem.title}</Link>
-              </li>
+          <select
+            id="authorSelect"
+            onChange={(e) => setSelectedAuthor(e.target.value)}
+            value={selectedAuthor}
+            style={{ width: "250px" }}
+            className="mt-2"
+          >
+            <option value="">Select an author</option>
+            {authors.map((author) => (
+              <option key={author} value={author}>
+                {author}
+              </option>
             ))}
-          </ul>
+          </select>
+
+          <div className="mt-8">
+            {selectedAuthor && (
+              <h3 className="mb-4 font-bold">Poems by {selectedAuthor}</h3>
+            )}
+            <ul>
+              {poems.map((poem) => (
+                <li key={poem.title}>
+                  <Link to={`/poem/${poem.title}`}>{poem.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

@@ -6,14 +6,9 @@ function Header() {
     <div>
       <nav className="bg-gradient-to-r from-pink-300 to-cyan-500 py-4">
         <div className="container mx-auto">
-          <ul className="flex space-x-6">
+          <ul className="flex space-x-6 text-gray-800 hover:text-gray-700 transition duration-300 font-extrabold px-4 py-2 text-lg rounded-lg">
             <li>
-              <Link
-                to="/"
-                className="text-gray-800 hover:text-gray-700 transition duration-300 font-extrabold px-4 py-2 text-lg rounded-lg"
-              >
-                Home
-              </Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
               <Link
