@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelectedAuthor } from "../authorContext";
-import Header from "./Header";
-import Footer from "./Footer";
 
 function PoetryApp() {
   const [authors, setAuthors] = useState([]);
@@ -32,8 +30,14 @@ function PoetryApp() {
   }, [selectedAuthor]);
 
   return (
-    <div>
-      <div className="bg-white mt-8 ml-8">
+    <div
+      style={{
+        background:
+          "linear-gradient(135deg, #FAD0C4, #B6D8C9, #EBBAB9, #C9D8B6)",
+      }}
+      className="min-h-screen flex flex-col justify-start items-center"
+    >
+      <div className="bg-white p-8 w-2/3 rounded-lg shadow-md relative z-10 mt-8">
         <label className="font-bold" htmlFor="authorSelect">
           Select an author:
         </label>
@@ -43,6 +47,7 @@ function PoetryApp() {
           onChange={(e) => setSelectedAuthor(e.target.value)}
           value={selectedAuthor}
           style={{ width: "250px" }}
+          className="mt-2"
         >
           <option value="">Select an author</option>
           {authors.map((author) => (
