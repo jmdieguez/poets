@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        cinzel: ["Cinzel", "serif"],
+        "source-serif-pro": ['"Source Serif Pro"', "serif"],
       },
     },
   },

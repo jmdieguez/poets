@@ -19,7 +19,11 @@ const router = createBrowserRouter([
   },
   {
     path: "poem/:title",
-    element: <PoemPage />,
+    element: (
+      <Layout>
+        <PoemPage />
+      </Layout>
+    ),
   },
 ]);
 
